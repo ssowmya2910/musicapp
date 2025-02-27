@@ -1,0 +1,22 @@
+@import "tailwindcss";
+.sidebar{
+    background-color:lavender;
+    height:100%;
+    width:25%;
+}
+.sidebar img{
+    width:20px;
+    height:20px;
+    margin: 0px 5px 0px 0px;
+    border-radius: 20%;
+}
+.inside{
+    display: flex;
+    color:rgb(140, 89, 144);
+    padding:30px;
+    cursor: pointer;
+}
+.inside:hover{
+    background-color: rgba(167, 110, 168, 0.457);
+}
+

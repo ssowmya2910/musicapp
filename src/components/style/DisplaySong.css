@@ -1,0 +1,22 @@
+
+div1{
+    
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+}
+.div1 img{
+    height:50px;
+    border-radius: 10%;
+    margin-top: 3px;
+
+}
+.play{
+    display: flex;
+   
+
+}
+.dissong{
+    margin: 10px; 
+    background-color: rgb(182, 115, 218);
+}
