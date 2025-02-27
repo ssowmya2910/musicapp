@@ -1,0 +1,36 @@
+.navv{
+    width:full;
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+    font:bold;
+}
+.navv2{
+    display: flex;
+    place-items: center;
+    cursor:pointer;
+   
+}
+.navbar:hover{
+    border:solid 3px rgb(160, 83, 232); 
+
+}
+.navbar{
+   margin:10px;
+}
+.navv2 img{
+    border-radius: 50%;
+    width:30px;
+    
+}
+.signup button{
+     padding:10px;
+     background-color: rgb(90, 55, 159);
+     color:white;
+     border-radius:500px;
+     cursor: pointer;
+}
+.signup button:hover{
+    background-color: rgb(226, 144, 226);
+    color:rgb(90, 55, 159);
+}

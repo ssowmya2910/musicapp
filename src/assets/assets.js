@@ -21,6 +21,13 @@ import img10 from './img10.jpg'
 import img11 from './img11.jpg'
 import img12 from './img12.jpg'
 import img13 from './img13.jpg'
+import mfu1 from'./mfu1.jpeg'
+import mfu2 from'./mfu2.jpeg'
+import mfu3 from'./mfu3.jpeg'
+import mfu4 from'./mfu4.jpeg'
+import mfu5 from'./mfu5.jpeg'
+import mfu6 from'./mfu6.jpeg'
+
 
 
 
@@ -66,20 +73,95 @@ export const album = [
     ,artist:"AnirudhRavichandran , Yogi"
     
 
-},
-   {
-    id:3,
-    name:"Mandram vandha Thendraluku",
-    image:img9,
+}]
+   
+   
+   export const album1= [{
+    id:4,
+    name:"Top 10 Telugu",
+    image:img12,
     backgroundcolor:"#rgb(65, 89, 174)",
     duration:3.25,
-    artist:"Ilaiyaraaja,SPB"
-
-
+   },
+   {
+    id:5,
+    name:"Top 10 Malayalam",
+    image:img13,
+    backgroundcolor:"#rgb(65, 89, 174)",
+    duration:3.25,
+   },
+   
+   {
+    id:6,
+    name:"Top 10 hindi",
+    image:img7,
+    backgroundcolor:"#rgb(65, 89, 174)",
+    duration:3.25,
    }
-
-
 ]
 
+
+export const mfu=[
+    {
+        id:1,
+        name:"Enna solla pogirai",
+        image:mfu4,
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06 
+
+    },
+    {
+        id:2,
+        name:"april maadhathil",
+        image:mfu6,
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06 
+
+    },
+    {
+        id:3,
+        name:"Vennilave",
+        image:mfu2,
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06 
+
+    },
+    {
+        id:4,
+        name:"Ennai Thaalata varuvala",
+        image:mfu5,
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06 
+
+    },
+    {
+        id:5,
+        name:"Annal mele pani",
+        image:mfu1,
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06 
+
+    },
+    {
+        id:6,
+        name:"vaarayo vaarayo",
+        image:mfu3,
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06 
+
+    }
+]
+
+export const newarr=[
+    {
+        id:1,
+        name:"Pasoori",
+        image:img5,
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06
+        ,artist:"Shae Gill" 
+
+    }
+]
 
 

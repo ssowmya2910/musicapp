@@ -1,8 +1,7 @@
 
-div1{
-    
+.div1{
+    width:100%;
     display: flex;
-    justify-content: space-between;
     place-items: center;
 }
 .div1 img{
@@ -13,10 +12,42 @@ div1{
 }
 .play{
     display: flex;
-   
+}
+
+.col{
+    display: flex;
+    place-items: center;
 
 }
+.col img{
+    width:20px;
+    height:20px;
+    margin: 0px 5px 0px 0px;
+    border-radius: 50%;
+    cursor: pointer;
+}
 .dissong{
-    margin: 10px; 
-    background-color: rgb(182, 115, 218);
+    margin-top: 3px;
+    background-color: rgb(220, 187, 237);
+    margin-right: 20px;
+    padding-right:25vw ;
+    
+}
+.playsong{
+    display: flex;
+    place-items: center;
+    gap:3px ;
+   
+}
+.so1{
+    width:60vw;
+    max-width: 500px;
+    cursor:pointer;
+    border-radius: 50%;
+    background-color: blueviolet;
+}
+.playline{
+    height: 1px;
+    width:25vw;
+    border-radius: 50%;
 }

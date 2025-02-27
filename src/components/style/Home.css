@@ -1,0 +1,18 @@
+.homesongs{
+    display:block;
+    font-weight: bold;
+    overflow: auto;
+
+}
+.aldis{
+   display: flex;
+  
+}
+.aldis2{
+    display: flex;
+   
+ }
+.homesongs h1{
+    color: rgb(112, 112, 235);
+    font-size: large;
+}

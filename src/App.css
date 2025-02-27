@@ -1,3 +1,9 @@
-*{
-  background-color:rgb(157, 119, 192);
+.app1{
+  background-color:rgba(227, 205, 246, 0.93);
+  height:100vh;
+}
+.app2{
+  height:90%;
+  display: flex;
+
 }
