@@ -88,7 +88,7 @@ export const album = [
    },
    
    {
-    id:4,
+    id:5,
     name:"Top 10 hindi",
     image:img7,
     backgroundcolor:"#rgb(65, 89, 174)",
@@ -99,7 +99,7 @@ export const album = [
 
 export const mfu=[
     {
-        id:5,
+        id:6,
         name:"Enna solla pogirai",
         image:mfu4,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -107,7 +107,7 @@ export const mfu=[
 
     },
     {
-        id:6,
+        id:7,
         name:"april maadhathil",
         image:mfu6,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -115,7 +115,7 @@ export const mfu=[
 
     },
     {
-        id:7,
+        id:8,
         name:"Vennilave",
         image:mfu2,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -123,7 +123,7 @@ export const mfu=[
 
     },
     {
-        id:8,
+        id:9,
         name:"Ennai Thaalata varuvala",
         image:mfu5,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -131,7 +131,7 @@ export const mfu=[
 
     },
     {
-        id:9,
+        id:10,
         name:"Annal mele pani",
         image:mfu1,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -139,7 +139,7 @@ export const mfu=[
 
     },
     {
-        id:10,
+        id:11,
         name:"vaarayo vaarayo",
         image:mfu3,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -150,7 +150,7 @@ export const mfu=[
 
 export const newarr=[
     {
-        id:11,
+        id:12,
         name:"Pasoori",
         image:img5,
         backgroundcolor:"#rgb(106, 137, 184)",

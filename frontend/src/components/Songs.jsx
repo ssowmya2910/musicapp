@@ -4,8 +4,8 @@ import './style/Songs.css'
 const Songs = ({image,name,id}) => {
   const navig=useNavigate();
   return (
-    // <div><div className='songs' onClick={()=>navig('/disalb/${id}')}>
-    <div className='songs'>
+   
+    <div className='songs'onClick={()=>navig(`/dissong/${id}`)}>
     <div className='box'>
       <img src={image} alt=""/>
      
@@ -13,6 +13,7 @@ const Songs = ({image,name,id}) => {
       <p className='sname'>{name}</p>
   </div>
    </div>
+   
   )
 }
 

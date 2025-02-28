@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from './Navbar'
+import Navbar from './Navbar.jsx'
 import { useParams } from 'react-router-dom'
-import { album } from '../assets/assets';
+import { album } from '../assets/assets.js';
 const DisAlb = () => {
     const {id}=useParams();
     const albumData=album[id];
