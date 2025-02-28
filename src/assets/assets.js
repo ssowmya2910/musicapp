@@ -5,6 +5,8 @@ import right from './rightarr.jpg'
 import shuffle from './shuffle.png'
 import speaker from './speak.png'
 import zoom from './zoom.png'
+import clock from './clock.png'
+import name from './Isai.png'
 import play from './play.jpg'
 import mic from './mic.png'
 import like from './like.png'
@@ -28,18 +30,15 @@ import mfu4 from'./mfu4.jpeg'
 import mfu5 from'./mfu5.jpeg'
 import mfu6 from'./mfu6.jpeg'
 
-
-
-
-
-
 export const assets={
     home,
     left,
+    name,
     shuffle,
     right,
     zoom,
     speaker,
+    clock,
     like,
     mic,
     add,
@@ -73,18 +72,15 @@ export const album = [
     ,artist:"AnirudhRavichandran , Yogi"
     
 
-}]
-   
-   
-   export const album1= [{
-    id:4,
+},{
+    id:3,
     name:"Top 10 Telugu",
     image:img12,
     backgroundcolor:"#rgb(65, 89, 174)",
     duration:3.25,
    },
    {
-    id:5,
+    id:4,
     name:"Top 10 Malayalam",
     image:img13,
     backgroundcolor:"#rgb(65, 89, 174)",
@@ -92,7 +88,7 @@ export const album = [
    },
    
    {
-    id:6,
+    id:4,
     name:"Top 10 hindi",
     image:img7,
     backgroundcolor:"#rgb(65, 89, 174)",
@@ -103,7 +99,7 @@ export const album = [
 
 export const mfu=[
     {
-        id:1,
+        id:5,
         name:"Enna solla pogirai",
         image:mfu4,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -111,7 +107,7 @@ export const mfu=[
 
     },
     {
-        id:2,
+        id:6,
         name:"april maadhathil",
         image:mfu6,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -119,7 +115,7 @@ export const mfu=[
 
     },
     {
-        id:3,
+        id:7,
         name:"Vennilave",
         image:mfu2,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -127,7 +123,7 @@ export const mfu=[
 
     },
     {
-        id:4,
+        id:8,
         name:"Ennai Thaalata varuvala",
         image:mfu5,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -135,7 +131,7 @@ export const mfu=[
 
     },
     {
-        id:5,
+        id:9,
         name:"Annal mele pani",
         image:mfu1,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -143,7 +139,7 @@ export const mfu=[
 
     },
     {
-        id:6,
+        id:10,
         name:"vaarayo vaarayo",
         image:mfu3,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -154,7 +150,7 @@ export const mfu=[
 
 export const newarr=[
     {
-        id:1,
+        id:11,
         name:"Pasoori",
         image:img5,
         backgroundcolor:"#rgb(106, 137, 184)",

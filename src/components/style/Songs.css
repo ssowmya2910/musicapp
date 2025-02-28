@@ -1,8 +1,7 @@
-.albums{
+.songs{
     min-width: 180px;
     padding: 20px;
     cursor: pointer;
-    
     margin-bottom: 10px;
 }
 /* .box{
@@ -10,10 +9,10 @@
     padding: 5px;
     border-radius: 10px;
 } */
-.albums:hover{
+.songs:hover{
     background-color: rgb(229, 179, 240);
 }
-.albums img{
+.songs img{
     height:150px;
     width:130px;
     border-radius: 10px;
@@ -21,7 +20,7 @@
     
     
 }
-.albums p{
+.songs p{
     font-weight: bold;
     margin-top: 20px;
     margin-bottom: 10px;

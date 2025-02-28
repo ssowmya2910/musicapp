@@ -3,6 +3,9 @@
     width:100%;
     display: flex;
     place-items: center;
+    position: fixed;
+    background-color: rgb(220, 187, 237);
+    margin-bottom: 0px;
 }
 .div1 img{
     height:50px;
@@ -26,23 +29,24 @@
     border-radius: 50%;
     cursor: pointer;
 }
-.dissong{
+/* .dissong{
     margin-top: 3px;
-    background-color: rgb(220, 187, 237);
     margin-right: 20px;
     padding-right:25vw ;
     
-}
+} */
+
 .playsong{
     display: flex;
     place-items: center;
-    gap:3px ;
+    /* gap:3px ; */
    
 }
 .so1{
     width:60vw;
     max-width: 500px;
     cursor:pointer;
+    gap:3px;
     border-radius: 50%;
     background-color: blueviolet;
 }

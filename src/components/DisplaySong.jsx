@@ -9,7 +9,7 @@ const DisplaySong = () => {
         <div className='dissong' >
           <p>{newarr[0].name}</p>
           <p>{newarr[0].artist}</p>
-
+         
           {/* <p>{album[3].duration}</p> */}
 
         </div>
