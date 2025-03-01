@@ -2,9 +2,9 @@ import React from 'react'
 import './style/Album.css'
 import { useNavigate } from 'react-router-dom'
 const Album = ({image,name,id}) => {
-  const navig=useNavigate()
+  const navigator=useNavigate()
   return (
-    <div className='albums' onClick={()=>navig(`/disalb/${id}`)}>
+    <div className='albums' onClick={()=>navigator(`/disalb/${id}`)}>
       <div className='box'>
         <img src={image} alt=""/>
        

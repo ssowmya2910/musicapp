@@ -1,0 +1,15 @@
+.disp{
+    height:150px;
+    width: 150px;
+   
+}
+.disdiv1{
+    place-items: center;
+    padding: 20px;
+}
+.albumname{
+    color: darkorchid;
+    font-size: large;
+    font-weight: bold;
+    
+}

@@ -9,9 +9,9 @@ const Navbar = () => {
             <img className='navbar' src={assets.left} alt=" "/>
             <img className='navbar' src={assets.right} alt=" "/>
         </div>
-       <div className='signup'>
+       {/* <div className='signup'>
        <Link to='/signup' className='signlink'><button >Signup</button></Link> 
-       </div>
+       </div> */}
     </div>
   )
 }

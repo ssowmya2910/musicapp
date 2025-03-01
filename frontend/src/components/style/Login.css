@@ -1,35 +1,36 @@
-.signupbox{
+.loginbox{
     padding:80px;
 }
-.signupform {
+.loginform {
     width: 350px;
-    margin: 50px auto;
+    margin:  auto;
     padding: 20px;
-    background: #f8eff9;
+    padding-top:30px;
+    background: #ece6ec;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.signupform h3 {
+.loginform h3 {
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
 }
 
-.FormInput {
+.FormInput1 {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.FormInput label {
+.FormInput1 label {
     font-size: 14px;
     font-weight: bold;
     text-align: left;
 }
 
-.FormInput input {
+.FormInput1 input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -39,15 +40,15 @@
     transition: 0.3s;
 }
 
-.FormInput input:focus {
-    border-color: #6a5acd;
+.FormInput1 input:focus {
+    border-color: #efe5f2;
 }
 
-.btn {
+.loginbtn {
     margin-top: 15px;
     width: 100%;
     padding: 10px;
-    background: #6a5acd;
+    background: #d689e2;
     color: rgb(230, 205, 230);
     border: none;
     border-radius: 5px;
@@ -56,25 +57,25 @@
     transition: 0.3s;
 }
 
-.btn:hover {
-    background: #5a4ebb;
+.loginbtn:hover {
+    background: #c77bd5;
 }
 
-.login {
+.signup{
     margin-top: 15px;
     font-size: 14px;
 }
 
-.login p {
+.signup {
     margin: 0;
 }
 
-.login a {
-    color: #6a5acd;
+.signup a {
+    color: #b254b4;
     font-weight: bold;
     text-decoration: none;
 }
 
-.login a:hover {
+.signup a:hover {
     text-decoration: underline;
 }
