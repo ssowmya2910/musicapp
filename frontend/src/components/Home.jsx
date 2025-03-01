@@ -4,6 +4,7 @@ import { album ,mfu} from '../assets/assets'
 import Album from './Album'
 import Songs from './Songs'
 import './style/Home.css'
+import Sidebar from './Sidebar'
 const Home = () => {
   return (
    <>

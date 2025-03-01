@@ -5,6 +5,7 @@ import Home from './Home'
 import Signup from './Signup'
 import Login from './Login'
 import DisAlb from './DisAlb'
+import Sidebar from './Sidebar'
 const Frontpage = () => {
   return (
     <div className='frontpg'>

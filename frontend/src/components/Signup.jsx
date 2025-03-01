@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import './style/Signup.css'
 const Signup = () => {
     const [email,setEmail]=useState("");
     const [password,setPass]=useState("");
-
-
+   
+    
   return (
 
     <div className='signupbox'>
@@ -20,9 +20,13 @@ const Signup = () => {
 
                 <label>Password:</label>
                 <input type="password" id="Password" value={password} onChange={e=>setPass(e.target.value)} placeholder="Enter your Password"/>
-                <button type="submit" class="btn">Signup</button>
+                <button type="submit" class="btn">Signup
+                </button>
             </div>
         </form>
+       
+
+
         <div className='login'>
             <p>Already have an account?</p>
             <Link to="/login" type="submit" class="login">Login</Link>

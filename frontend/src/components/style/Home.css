@@ -13,7 +13,8 @@
 .homesongs h1{
     color: rgb(112, 112, 235);
     font-size: large;
-    position:absolute;
     margin-bottom: 60px;
     margin-top: auto;
+    place-items: center;
 }
+

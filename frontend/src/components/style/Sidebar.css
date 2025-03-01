@@ -1,9 +1,15 @@
 @import "tailwindcss";
 .sidebar{
     background-color:lavender;
-    height:100%;
-    width:50%;
-    padding:2px;
+   width: 250px;
+     height: 100vh;
+     position: fixed;
+     left: 0;
+    top: 0;
+     color: white;
+           padding: 20px;
+       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      
 }
 .logo{
     width:100%;

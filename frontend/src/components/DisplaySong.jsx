@@ -1,37 +1,24 @@
-import React from 'react'
-import './style/DisplaySong.css'
-import {newarr, assets} from '../assets/assets.js'
-const DisplaySong = () => {
+import React, { useState } from 'react';
+import './style/DisplaySong.css';
+import { assets } from '../assets/assets.js';
+
+const DisplaySong = ({ song }) => {
   return (
     <div className='div1'>
-        <div className='play'>
-        <img className='img1' src={newarr[0].image} alt=""/>
-        <div className='dissong' >
-          <p>{newarr[0].name}</p>
-          <p>{newarr[0].artist}</p>
-         
-          {/* <p>{album[3].duration}</p> */}
-
+      <div className='play'>
+        <img className='img1' src={song.image} alt="Song Cover" />
+        <div className='dissong'>
+          <p>{song.name}</p>
+          <p>{song.artist}</p>
         </div>
         <div className='col'>
-          <img src={assets.left} alt=""/>
-          <img src={assets.play} alt=""/>
-          <img src={assets.right} alt=""/>
- 
+          <img src={assets.left} alt="Prev" />
+          <img src={assets.play} alt="Play" />
+          <img src={assets.right} alt="Next" />
         </div>
-        <div className='playsong'>
-    <p>2:08</p>
-    <div className='so1'>
-      <hr className='playline' />
+      </div>
     </div>
-    <p>3:23</p>
-        </div>
-        </div>
-        <div className='hid'>
-          {/* have to design hideitems */}
-        </div>
-    </div>
-  )
-}
+  );
+};
 
-export default DisplaySong
+export default DisplaySong;
