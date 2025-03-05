@@ -1,16 +1,30 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom';
+import axios from 'axios'; 
 import './style/Signup.css'
 const Signup = () => {
     const [email,setEmail]=useState("");
     const [password,setPass]=useState("");
+    const navigate=useNavigate();
+    const handleSignup=async(e)=>{
+        e.preventDefault();
+        try{
+            const response=await axios.post("https://isaiwreathe.onrender.com",{email,password});
+            alert(response.data.message);
+            navigate("/login");
+        }
+        catch(error){
+            alert("Signup failed");
+        }
+
+    };
    
     
   return (
 
     <div className='signupbox'>
-        <form>
+        <form onSubmit={handleSignup}>
        <div className="signupform">
         <h3 >Signup</h3>
         <form >

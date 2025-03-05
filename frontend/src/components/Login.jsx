@@ -2,21 +2,26 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './style/Login.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin =async (e) => {
     e.preventDefault();
-    
-    if (email === "sow@gmail.com" && password === "sow") {
+    try{
+      const response=await axios.post("https://isaiwreathe.onrender.com",{email,password});
       setIsAuthenticated(true);
-      navigate('/'); 
-    } else {
-      alert("Invalid credentials!");
+      navigate("/");
+
     }
+    catch{
+      alert("Invalid credentials");
+    }
+    
+    
   };
 
   return (

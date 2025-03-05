@@ -12,7 +12,6 @@ const App = () => {
   return (
     <div className='app1'>
       <BrowserRouter>
-      <Sidebar/>
         <Routes>
           <Route path='/' element={isAuthenticated ? <Frontpage /> : <Navigate to="/login" />} />
           <Route path='/login' element={<Login setIsAuthenticated={setIsAuthenticated} />} />

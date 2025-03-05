@@ -1,4 +1,4 @@
-require('dotenv').config();
+const dotenv= require("dotenv");
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const app = express();
 app.use(express.json());
 app.use(cors());
-
+dotenv.config();
 const UserSchema = new mongoose.Schema({
     email: String,
     password: String
@@ -21,6 +21,10 @@ mongoose.connect(process.env.MONGODB_URL)
 .catch((err) => {
   console.log("Check your connection string", err);
 });
+
+app.get("/", (req, res) => {
+    res.send("<h1>Welcome to backend</h1>");
+  });
 app.post('/signup', async (req, res) => {
     const { email, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
