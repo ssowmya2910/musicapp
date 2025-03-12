@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Frontpage from './components/Frontpage';
 import Sidebar from './components/Sidebar';
 import Home from './components/Home';
+import DisAlb from './components/DisAlb';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -16,7 +17,9 @@ const App = () => {
           <Route path='/' element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
           <Route path='/login' element={<Login setIsAuthenticated={setIsAuthenticated} />} />
           <Route path='/signup' element={<Signup setIsAuthenticated={setIsAuthenticated} />} />
-          <Route path='/home' element={< Home />} />
+          <Route path='/disalb/:id' element={<DisAlb/>}/>
+          <Route path='/home' element={<Home/>}/>
+          {/* <Route path='/home' element={< Home />} /> */}
            
         </Routes>
       </BrowserRouter>

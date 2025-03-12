@@ -29,6 +29,12 @@ import mfu3 from'./mfu3.jpeg'
 import mfu4 from'./mfu4.jpeg'
 import mfu5 from'./mfu5.jpeg'
 import mfu6 from'./mfu6.jpeg'
+import song1 from './song1.mp3'
+import song2 from './song2.mp3'
+import song3 from './song3.mp3'
+import song4 from './song4.mp3'
+import song5 from './song5.mp3'
+
 
 export const assets={
     home,
@@ -158,6 +164,19 @@ export const newarr=[
         ,artist:"Shae Gill" 
 
     }
+]
+export const disalb1=[
+    {
+        id:13,
+        name:"song1",
+        image:img6,
+        Audio:song1,
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06
+        ,artist:"Shae Gill" 
+
+    }
+
 ]
 
 
