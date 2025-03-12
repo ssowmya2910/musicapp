@@ -12,9 +12,9 @@ const Login = ({ setIsAuthenticated }) => {
   const handleLogin =async (e) => {
     e.preventDefault();
     try{
-      const response=await axios.post("https://isaiwreathe.onrender.com",{email,password});
+      const response=await axios.post("https://isaiwreathe.onrender.com/login",{email,password});
       setIsAuthenticated(true);
-      navigate("/");
+      navigate("/home");
 
     }
     catch{

@@ -10,9 +10,9 @@ const Signup = () => {
     const handleSignup=async(e)=>{
         e.preventDefault();
         try{
-            const response=await axios.post("https://isaiwreathe.onrender.com",{email,password});
+            const response=await axios.post("https://isaiwreathe.onrender.com/signup",{email,password});
             alert(response.data.message);
-            navigate("/login");
+            navigate("/home");
         }
         catch(error){
             alert("Signup failed");
@@ -27,7 +27,7 @@ const Signup = () => {
         <form onSubmit={handleSignup}>
        <div className="signupform">
         <h3 >Signup</h3>
-        <form >
+        {/* <form > */}
             <div className="FormInput">
                 <label>Email:</label>
                 <input type="email" id="Email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="Enter your Email"/>
@@ -37,7 +37,7 @@ const Signup = () => {
                 <button type="submit" class="btn">Signup
                 </button>
             </div>
-        </form>
+        {/* </form> */}
        
 
 

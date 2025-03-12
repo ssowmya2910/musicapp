@@ -13,7 +13,7 @@ const App = () => {
     <div className='app1'>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={isAuthenticated ? <Frontpage /> : <Navigate to="/login" />} />
+          <Route path='/' element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
           <Route path='/login' element={<Login setIsAuthenticated={setIsAuthenticated} />} />
           <Route path='/signup' element={<Signup setIsAuthenticated={setIsAuthenticated} />} />
           <Route path='/home' element={< Home />} />
