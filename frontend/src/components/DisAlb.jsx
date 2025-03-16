@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from './Navbar.jsx';
 import { album, mfu } from '../assets/assets';
-import DisplaySong from './DisplaySong';
 import './style/Display.css';
 import {disalb1} from '../assets/assets'
 
@@ -21,19 +20,27 @@ const songData=mfu[id];
         <img className='disp' src={albumData.image} alt="Album Cover" />
         <h2 className='albumname'>{albumData.name}</h2>
       </div>
+      <div className='header'>
+        <p><b className='tit'>#</b>Title</p>
+        <p>Artist</p>
+        <p>Album</p>
+
+      </div>
+      
       <hr/>
       <div className='albumSongs'>
         {
           disalb1.map((item,index)=>(
-            <div className='disalb1'>
+            <div className='disalb1' >
               <p>
               <b>{index+1}</b>
               <img className='songimg' src={item.image} alt=""/>
               {item.name}
               </p>
-              <p>{albumData.name}</p> 
-              <p>5 days ago</p> 
-              <p>{item.duration}</p></div>
+              <p>{item.artist}</p>
+              <p>{albumData.name}</p>
+             
+              </div>
           ))
         }
       </div>

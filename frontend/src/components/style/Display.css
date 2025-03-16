@@ -17,12 +17,28 @@
     
     gap:20px;
     padding: 20px;
-    place-items: center;
+    display:flex;
    justify-content: space-between;
 
+}
+.albumSongs :hover{
+    background-color: lavender;
+    cursor: pointer;
+}
+.albumSongs{
+    margin-right:200px;
+    width: 100%;
+    /* margin-left: 200px; */
 }
 .songimg{
     display: inline;
     width: 70px;
     margin-right: 50px;
+}
+.header p{
+    display:inline;
+    margin-right:200px;
+   margin-left:200px;
+   width:100%;
+    margin-top:50px;
 }

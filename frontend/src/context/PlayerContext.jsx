@@ -1,5 +1,5 @@
 import { createContext, useEffect, useRef, useState } from "react";
-import { disalb1 } from "../assets/assets";
+import {  mfu } from "../assets/assets";
 
 export const PlayerContext=createContext();
 
@@ -8,7 +8,14 @@ const PlayerContextProv=(props)=>{
     const seek=useRef();
     const seekBar=useRef();
 
-    const [track,setTrack]=useState(disalb1[0]);
+    const [track,setTrack]=useState(mfu[0] ||{
+        name:"unknown",
+        artist:"unknown",
+        image:"",
+        file:""
+    }
+
+    );
     const [playStatus,setPlayStatus]=useState(false);
     const [time,setTime]=useState({
         currentTime:{
@@ -20,20 +27,40 @@ const PlayerContextProv=(props)=>{
             minute:0
         }
     })
-    const play=()=>{
-       audioRef.current.play();
-       setPlayStatus(true); 
-    }
+    const play = () => {
+        if (audioRef.current && track.file) {
+            audioRef.current.src = track.file; 
+            audioRef.current.play()
+                .then(() => setPlayStatus(true))
+                .catch(err => console.error("Playback failed:", err));
+        } else {
+            console.error("Audio reference is null or file is missing", track);
+        }
+    };
+    
     const pause=()=>{
         audioRef.current.pause();
         setPlayStatus(false); 
      }
-     const playWithId=async(id)=>{
-        await setTrack(disalb1[id]);
-        await audioRef.current.play();
-        setPlayStatus(true);
-
-     }
+     const playWithId = async (id) => {
+        if (!audioRef.current) {
+            console.error("Audio reference is null");
+            return;
+        }
+    
+        const newTrack = mfu.find(item => item.id === id);
+        
+        if (newTrack && newTrack.file) {
+            await setTrack(newTrack);
+            audioRef.current.src = newTrack.file; 
+            audioRef.current.play()
+                .then(() => setPlayStatus(true))
+                .catch(err => console.error("Playback failed:", err));
+        } else {
+            console.error("Track file is missing for ID:", id);
+        }
+    };
+    
      useEffect(()=>{
         setTimeout(()=>{
     audioRef.current.ontimeupdate=()=>{
@@ -70,7 +97,6 @@ const PlayerContextProv=(props)=>{
     }
     return (
         <PlayerContext.Provider value={contextValue}>
-            <audio ref={audioRef} src={track.src}></audio>
             {props.children}
         </PlayerContext.Provider>
     )

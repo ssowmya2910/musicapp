@@ -115,7 +115,7 @@ export const album = [
 export const mfu=[
     {
         id:6,
-        name:"Enna solla pogirai",
+        name:"Enna solla",
         image:mfu4,
         file:mfu1mp3,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -142,7 +142,7 @@ export const mfu=[
     },
     {
         id:9,
-        name:"Ennai Thaalata varuvala",
+        name:"Ennai Thaalata",
         image:mfu5,
         file:mfu4mp3,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -151,7 +151,7 @@ export const mfu=[
     },
     {
         id:10,
-        name:"Annal mele pani",
+        name:"Annal mele",
         image:mfu1,
         file:mfu5mp3,
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -183,18 +183,20 @@ export const newarr=[
 export const disalb1=[
     {
         id:13,
-        name:"Play Date",
+        name:"Baila Conmigo",
         image:img6,
+        albumId:"1",
         file:song1,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06
-        ,artist:"Lilly Brooks" 
+        ,artist:"Selena Gomez" 
 
     },
     {
         id:14,
         name:"Your Power",
         image:img6,
+        albumId:"2",
         file:song2,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06
@@ -205,6 +207,7 @@ export const disalb1=[
         id:15,
         name:"Electric",
         image:img6,
+        albumId:"3",
         file:song3,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06
@@ -213,22 +216,24 @@ export const disalb1=[
     },
     {
         id:16,
-        name:"Nobody is Listening",
+        name:"Nobody",
         image:img6,
+        albumId:"4",
         file:song4,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06
-        ,artist:"Zayn" 
+        ,artist:"Zayn Malik" 
 
     },
     {
         id:17,
-        name:"Baila Conmigo",
+        name:"Play Date",
         image:img6,
+        albumId:"5",
         file:song5,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06
-        ,artist:"Selena Gomez" 
+        ,artist:"Lilly Brooks" 
 
     }
 
