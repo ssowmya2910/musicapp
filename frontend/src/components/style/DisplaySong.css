@@ -4,6 +4,9 @@
     display: flex;
     place-items: center;
     position: fixed;
+    bottom:0;
+    left:0;
+    z-index:1000;
     background-color: rgb(220, 187, 237);
     margin-bottom: 0px;
 }
@@ -15,11 +18,17 @@
 }
 .play{
     display: flex;
+    
+}
+.pause{
+    display: flex;
+    
 }
 
 .col{
     display: flex;
     place-items: center;
+    margin-right: 30px;
 
 }
 .col img{
@@ -39,14 +48,15 @@
 .playsong{
     display: flex;
     place-items: center;
-    /* gap:3px ; */
+    gap:30px ;
+    margin-left: 30px;
    
 }
 .so1{
     width:60vw;
     max-width: 500px;
     cursor:pointer;
-    gap:3px;
+    gap:30px;
     border-radius: 50%;
     background-color: blueviolet;
 }

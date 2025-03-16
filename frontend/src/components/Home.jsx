@@ -5,10 +5,12 @@ import Album from './Album'
 import Songs from './Songs'
 import './style/Home.css'
 import Sidebar from './Sidebar'
+import DisplaySong from './DisplaySong'
 const Home = () => {
   return (
    <>
    <Navbar/>
+   <DisplaySong/>
    <div className='homesongs'>
     <h1>Featured Songs</h1>
     <div className='aldis'>
@@ -24,7 +26,9 @@ const Home = () => {
       <Songs key={index} name={items.name} image={items.image} id={items.id}/>
     ))}
      </div>
+    
    </div>
+   
    </>
   )
 }

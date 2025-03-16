@@ -21,6 +21,22 @@ const songData=mfu[id];
         <img className='disp' src={albumData.image} alt="Album Cover" />
         <h2 className='albumname'>{albumData.name}</h2>
       </div>
+      <hr/>
+      <div className='albumSongs'>
+        {
+          disalb1.map((item,index)=>(
+            <div className='disalb1'>
+              <p>
+              <b>{index+1}</b>
+              <img className='songimg' src={item.image} alt=""/>
+              {item.name}
+              </p>
+              <p>{albumData.name}</p> 
+              <p>5 days ago</p> 
+              <p>{item.duration}</p></div>
+          ))
+        }
+      </div>
       {/* <div className="song-list">
         {songData.songs.map((song, index) => (
           <div key={index} className="song-item" onClick={() => DisplaySong(song)}>

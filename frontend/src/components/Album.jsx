@@ -6,7 +6,7 @@ const Album = ({image,name,id}) => {
   return (
     <div className='albums' onClick={()=>navigator(`/disalb/${id}`)}>
       <div className='box'>
-        <img src={image} alt=""/>
+        <img src={image} alt=" "/>
        
         </div>
         <p className='sname'>{name}</p>

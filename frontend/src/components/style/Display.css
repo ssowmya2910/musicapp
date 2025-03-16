@@ -13,3 +13,16 @@
     font-weight: bold;
     
 }
+.disalb1{
+    
+    gap:20px;
+    padding: 20px;
+    place-items: center;
+   justify-content: space-between;
+
+}
+.songimg{
+    display: inline;
+    width: 70px;
+    margin-right: 50px;
+}

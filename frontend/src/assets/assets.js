@@ -1,13 +1,14 @@
 import bell from './bell.png'
 import home from './home.png'
 import left from './leftarr.png'
-import right from './rightarr.jpg'
+import right from './rightarr.png'
 import shuffle from './shuffle.png'
 import speaker from './speak.png'
 import zoom from './zoom.png'
 import clock from './clock.png'
 import name from './Isai.png'
-import play from './play.jpg'
+import play from './play.png'
+import pause from './pause.png'
 import mic from './mic.png'
 import like from './like.png'
 import add from './add.png'
@@ -34,6 +35,13 @@ import song2 from './song2.mp3'
 import song3 from './song3.mp3'
 import song4 from './song4.mp3'
 import song5 from './song5.mp3'
+import mfu1mp3 from './mfu1.mp3'
+import mfu2mp3 from './mfu2.mp3'
+import mfu3mp3 from './mfu3.mp3'
+import mfu4mp3 from './mfu4.mp3'
+import mfu5mp3 from './mfu5.mp3'
+import mfu6mp3 from './mfu6.mp3'
+
 
 
 export const assets={
@@ -49,7 +57,8 @@ export const assets={
     mic,
     add,
     play,
-    bell
+    bell,
+    pause
 }
 export const album = [
     {
@@ -108,6 +117,7 @@ export const mfu=[
         id:6,
         name:"Enna solla pogirai",
         image:mfu4,
+        file:mfu1mp3,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -116,6 +126,7 @@ export const mfu=[
         id:7,
         name:"april maadhathil",
         image:mfu6,
+        file:mfu2mp3,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -124,6 +135,7 @@ export const mfu=[
         id:8,
         name:"Vennilave",
         image:mfu2,
+        file:mfu3mp3,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -132,6 +144,7 @@ export const mfu=[
         id:9,
         name:"Ennai Thaalata varuvala",
         image:mfu5,
+        file:mfu4mp3,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -140,6 +153,7 @@ export const mfu=[
         id:10,
         name:"Annal mele pani",
         image:mfu1,
+        file:mfu5mp3,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -148,6 +162,7 @@ export const mfu=[
         id:11,
         name:"vaarayo vaarayo",
         image:mfu3,
+        file:mfu6mp3,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -168,12 +183,52 @@ export const newarr=[
 export const disalb1=[
     {
         id:13,
-        name:"song1",
+        name:"Play Date",
         image:img6,
-        Audio:song1,
+        file:song1,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06
-        ,artist:"Shae Gill" 
+        ,artist:"Lilly Brooks" 
+
+    },
+    {
+        id:14,
+        name:"Your Power",
+        image:img6,
+        file:song2,
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06
+        ,artist:"Billie Eilish" 
+
+    },
+    {
+        id:15,
+        name:"Electric",
+        image:img6,
+        file:song3,
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06
+        ,artist:"Katy Perry" 
+
+    },
+    {
+        id:16,
+        name:"Nobody is Listening",
+        image:img6,
+        file:song4,
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06
+        ,artist:"Zayn" 
+
+    },
+    {
+        id:17,
+        name:"Baila Conmigo",
+        image:img6,
+        file:song5,
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06
+        ,artist:"Selena Gomez" 
 
     }
 

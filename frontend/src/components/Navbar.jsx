@@ -7,8 +7,8 @@ const Navbar = () => {
   return (
     <div className='navv'>     
         <div className='navv2' >
-            <img className='navbar' onClick={()=>navigate(`/home`)} src={assets.left} alt=" "/>
-            <img className='navbar' src={assets.right} alt=" "/>
+            <img className='navbar' onClick={()=>navigate(-1)} src={assets.left} alt=" "/>
+            <img className='navbar' onClick={()=>navigate(1)} src={assets.right} alt=" "/>
         </div>
        {/* <div className='signup'>
        <Link to='/signup' className='signlink'><button >Signup</button></Link> 
