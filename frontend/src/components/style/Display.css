@@ -30,6 +30,14 @@
     width: 100%;
     /* margin-left: 200px; */
 }
+.artistname p{
+    /* padding:20px; */
+   padding: 10px;
+}
+.songplay{
+    padding: 10px;
+
+}
 .songimg{
     display: inline;
     width: 70px;

@@ -526,6 +526,7 @@ export const disalb1=[
         albumId:"2",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 ,
+        artist:"ShankarMahadevan"
 
     },
     {
@@ -536,6 +537,7 @@ export const disalb1=[
         albumId:"2",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06, 
+        artist:"Unnikrishnan"
 
     },
     {
@@ -546,6 +548,7 @@ export const disalb1=[
         file:mfu3mp3,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 ,
+        artist:"Hariharan"
 
     },
     {
@@ -556,6 +559,7 @@ export const disalb1=[
         albumId:"2",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 ,
+        artist:"Hariharan"
 
     },
     {
@@ -566,6 +570,7 @@ export const disalb1=[
         albumId:"2",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 ,
+        artist:"SudhaRagunathan"
 
     },
     {
@@ -576,6 +581,7 @@ export const disalb1=[
         albumId:"2",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 ,
+        artist:"HarrisJayaraj"
 
     },
     {
@@ -584,6 +590,7 @@ export const disalb1=[
         image:img2,
         file:hindi1,
         albumId:"1",
+        artist:"artist1",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -594,6 +601,8 @@ export const disalb1=[
         image:img2,
         file:hindi2,
         albumId:"1",
+        artist:"artist2",
+
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -604,6 +613,8 @@ export const disalb1=[
         image:img2,
         file:hindi3,
         albumId:"1",
+        artist:"artist3",
+
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -614,6 +625,8 @@ export const disalb1=[
         image:img2,
         file:hindi4,
         albumId:"1",
+        artist:"artist4",
+
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -624,6 +637,8 @@ export const disalb1=[
         image:img2,
         file:hindi5,
         albumId:"1",
+        artist:"artist5",
+
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -634,6 +649,8 @@ export const disalb1=[
         image:img2,
         file:hindi1,
         albumId:"5",
+        artist:"artist1",
+
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -644,6 +661,8 @@ export const disalb1=[
         image:img2,
         file:hindi2,
         albumId:"5",
+        artist:"artist2",
+
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -654,6 +673,8 @@ export const disalb1=[
         image:img2,
         file:hindi3,
         albumId:"5",
+        artist:"artist3",
+
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -664,6 +685,8 @@ export const disalb1=[
         image:img2,
         file:hindi4,
         albumId:"5",
+        artist:"artist4",
+
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -674,6 +697,8 @@ export const disalb1=[
         image:img2,
         file:hindi5,
         albumId:"5",
+        artist:"artist5",
+
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -684,6 +709,8 @@ export const disalb1=[
         image:img5,
         file:telugu1,
         albumId:"3",
+        artist:"artist1",
+
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -694,6 +721,8 @@ export const disalb1=[
         image:img5,
         file:telugu2,
         albumId:"3",
+        artist:"artist2",
+
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -703,6 +732,8 @@ export const disalb1=[
         name:"song3",
         image:img5,
         file:telugu3,
+        artist:"artist3",
+
         albumId:"3",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
@@ -714,6 +745,8 @@ export const disalb1=[
         image:img5,
         file:telugu4,
         albumId:"3",
+        artist:"artist4",
+        
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -724,6 +757,8 @@ export const disalb1=[
         image:img5,
         file:telugu5,
         albumId:"3",
+        artist:"artist5",
+
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
 
@@ -733,6 +768,8 @@ export const disalb1=[
         name:"song1",
         image:img5,
         file:mal1,
+        artist:"artist1",
+
         albumId:"4",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
@@ -743,6 +780,8 @@ export const disalb1=[
         name:"song2",
         image:img5,
         file:mal2,
+        artist:"artist2",
+
         albumId:"4",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 
@@ -752,6 +791,8 @@ export const disalb1=[
         id:30,
         name:"song3",
         image:img5,
+        artist:"artist3",
+
         file:mal3,
         albumId:"4",
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -762,6 +803,8 @@ export const disalb1=[
         id:31,
         name:"song4",
         image:img5,
+        artist:"artist4",
+
         file:mal4,
         albumId:"4",
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -772,6 +815,8 @@ export const disalb1=[
         id:32,
         name:"song5",
         image:img5,
+        artist:"artist5",
+
         file:mal5,
         albumId:"4",
         backgroundcolor:"#rgb(106, 137, 184)",

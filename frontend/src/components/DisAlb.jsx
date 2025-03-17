@@ -77,7 +77,7 @@ const DisAlb = () => {
       
       <div className='header'>
         <p><b className='tit'>#</b>Title</p>
-  
+        <p>Artist</p>
         <p>Album</p>
       </div>
       
@@ -85,13 +85,15 @@ const DisAlb = () => {
       <div className='albumSongs'>
         {albumSongs.map((item, index) => (
           <div className='disalb1' key={item.id} onClick={() => playWithId(item.id, false)}> 
-            <p>
+            <p className='songplay'>
               <b>{index + 1}</b>
               <img className='songimg' src={item.image} alt=""/>
               {item.name}
+   
             </p>
-           
+           <p className='artistname'>{item.artist}</p>
             <p>{albumData.name}</p>
+
           </div>
         ))}
       </div>

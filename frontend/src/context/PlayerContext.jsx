@@ -8,7 +8,7 @@ const PlayerContextProv=(props)=>{
     const seek=useRef();
     const seekBar=useRef();
 
-    const [track,setTrack]=useState(mfu[0] ||{
+    const [track,setTrack]=useState(mfu[6] ||{
         name:"unknown",
         artist:"unknown",
         image:"",
