@@ -28,14 +28,17 @@ const PlayerContextProv=(props)=>{
         }
     })
     const play = () => {
-        if (audioRef.current && track.file) {
-            audioRef.current.src = track.file; 
-            audioRef.current.play()
-                .then(() => setPlayStatus(true))
-                .catch(err => console.error("Playback failed:", err));
-        } else {
-            console.error("Audio reference is null or file is missing", track);
-        }
+        // if (audioRef.current && track.file) {
+        //     audioRef.current.src = track.file; 
+        //     audioRef.current.play()
+        //         .then(() => setPlayStatus(true))
+        //         .catch(err => console.error("Playback failed:", err));
+        // } else {
+        //     console.error("Audio reference is null or file is missing", track);
+        // }
+        audioRef.current.play();
+        setPlayStatus(true); 
+
     };
     
     const pause=()=>{
@@ -60,7 +63,23 @@ const PlayerContextProv=(props)=>{
             console.error("Track file is missing for ID:", id);
         }
     };
-    
+    const prev=async()=>{
+        if(track.id>0){
+            await setTrack(mfu[track.id-1]);
+            await audioRef.curr.play();
+            setPlayStatus(true);
+        }
+    }
+    const next=async()=>{
+        if(track.id<mfu.length-1){
+            await setTrack(mfu[track.id+1]);
+            await audioRef.curr.play();
+            setPlayStatus(true);
+        }
+    }   
+     const seekSong=async(e)=>{
+         audioRef.current.currentTime=((e.nativeEvent.offsetX/seek.current.offsetWidth)*audioRef.current.duration)
+     }
      useEffect(()=>{
         setTimeout(()=>{
     audioRef.current.ontimeupdate=()=>{
@@ -71,8 +90,8 @@ const PlayerContextProv=(props)=>{
                 minute:Math.floor(audioRef.current.currentTime/60)
             },
             totalTime:{
-                second:Math.floor(audioRef.current.currentTime%60),
-                minute:Math.floor(audioRef.current.currentTime/60)
+                second:Math.floor(audioRef.current.duration%60),
+                minute:Math.floor(audioRef.current.duration/60)
            
             }
         
@@ -93,7 +112,10 @@ const PlayerContextProv=(props)=>{
         setTime,
         play,
         pause,
-        playWithId
+        playWithId,
+        prev,
+        next,
+        seekSong
     }
     return (
         <PlayerContext.Provider value={contextValue}>

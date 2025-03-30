@@ -30,4 +30,11 @@
 .inside:hover{
     background-color: rgba(167, 110, 168, 0.457);
 }
+.sideBar2 img{
+    width:20px;
+    height:20px;
+    margin: 0px 5px 0px 0px;
+    border-radius: 50%;
+
+}
 

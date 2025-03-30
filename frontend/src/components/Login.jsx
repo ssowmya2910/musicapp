@@ -37,13 +37,14 @@ const Login = ({ setIsAuthenticated }) => {
             <input type="password" value={password} onChange={e => setPass(e.target.value)} placeholder="Enter your Password" />
             
             <button type="submit" className="loginbtn">Login</button>
-          </div>
-         
-        </div>
-        <div className='signup'>
+            <div className='signup'>
             <p>Dont have an account?</p>
             <Link to="/signup" type="submit" class="signup">Signup</Link>
         </div>
+          </div>
+         
+        </div>
+        
       </form>
      
     </div>

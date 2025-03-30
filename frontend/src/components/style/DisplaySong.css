@@ -61,7 +61,7 @@
     cursor:pointer;
     gap:30px;
     border-radius: 50%;
-    background-color: blueviolet;
+    background-color: rgb(175, 152, 196);
 }
 .playline{
     height: 1px;

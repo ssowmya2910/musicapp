@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { album ,mfu} from '../assets/assets'
+import { album ,mfu, disparr} from '../assets/assets'
 import Album from './Album'
 import Songs from './Songs'
 import './style/Home.css'
@@ -9,6 +9,7 @@ import DisplaySong from './DisplaySong'
 const Home = () => {
   return (
    <>
+   <Sidebar/>
    <Navbar/>
    <DisplaySong/>
    <div className='homesongs'>
@@ -22,7 +23,7 @@ const Home = () => {
    <div className='homesongs'>
     <h1>Made for you</h1>
    <div className='aldis'>
-    {mfu.map((items,index)=>(
+    {disparr.map((items,index)=>(
       <Songs key={index} name={items.name} image={items.image} id={items.id}/>
     ))}
      </div>
