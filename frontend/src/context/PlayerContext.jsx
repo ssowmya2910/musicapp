@@ -1,5 +1,5 @@
 import { createContext, useEffect, useRef, useState } from "react";
-import {  assets, mfu } from "../assets/assets";
+import {  assets, disalb1 } from "../assets/assets";
 
 export const PlayerContext=createContext();
 
@@ -8,7 +8,7 @@ const PlayerContextProv=(props)=>{
     const seek=useRef();
     const seekBar=useRef();
 
-    const [track,setTrack]=useState(mfu[6] ||{
+    const [track,setTrack]=useState(disalb1[6] ||{
         name:"unknown",
         artist:"unknown",
         image:"",
@@ -51,7 +51,7 @@ const PlayerContextProv=(props)=>{
             return;
         }
     
-        const newTrack = mfu.find(item => item.id === id);
+        const newTrack = disalb1.find(item => item.id === id);
         
         if (newTrack && newTrack.file) {
             await setTrack(newTrack);
@@ -65,14 +65,14 @@ const PlayerContextProv=(props)=>{
     };
     const prev=async()=>{
         if(track.id>0){
-            await setTrack(mfu[track.id-1]);
+            await setTrack(disalb1[track.id-1]);
             await audioRef.curr.play();
             setPlayStatus(true);
         }
     }
     const next=async()=>{
-        if(track.id<mfu.length-1){
-            await setTrack(mfu[track.id+1]);
+        if(track.id<disalb1.length-1){
+            await setTrack(disalb1[track.id+1]);
             await audioRef.curr.play();
             setPlayStatus(true);
         }

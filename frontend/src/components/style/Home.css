@@ -1,21 +1,81 @@
-.homesongs{
-    display:block;
+@import "tailwindcss";
+
+
+.homesongs {
+    margin-left: 250px;
+    padding: 20px;
     font-weight: bold;
-    overflow: auto;
-    padding-left:250px;
-
-}
-.aldis{
-   display: flex;
-    margin-top: 30px;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    min-height: 50vh;
+    padding-bottom: 50px; 
 }
 
-
-.homesongs h1{
+.homesongs h1 {
     color: rgb(112, 112, 235);
     font-size: large;
-    margin-bottom: 60px;
-    margin-top: auto;
-    place-items: center;
+    margin-bottom: 15px;
+    text-align: left;
 }
 
+
+.aldis {
+    display: flex;
+   
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.playbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #181818;
+    color: white;
+    padding: 10px 15px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+        padding: 15px;
+    }
+
+    .inside {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    .homesongs {
+        margin-left: 200px; 
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .homesongs {
+        margin-left: 0; 
+        padding: 10px;
+    }
+
+    .inside {
+        padding: 15px;
+        font-size: 12px;
+    }
+}

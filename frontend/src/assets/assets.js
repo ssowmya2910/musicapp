@@ -58,6 +58,7 @@ import mal2 from'./mal2.mp3'
 import mal3 from'./mal3.mp3'
 import mal4 from'./mal4.mp3'
 import mal5 from'./mal5.mp3'
+import img14 from './img14.jpg'
 
 
 
@@ -70,6 +71,7 @@ export const assets={
     right,
     search,
     zoom,
+    img14,
     speaker,
     clock,
     like,
@@ -86,15 +88,13 @@ export const album = [
     name:"Top 10 Global",
     image:img4,
     backgroundcolor:"#rgb(157, 119, 192)",
-    duration:3.14
 },
 {
     id:1,
     name:"Top 10 India",
     image:img2,
     backgroundcolor:"#rgb(106, 137, 184)",
-    duration:3.06
-    ,artist:"Arijit singh" 
+    artist:"Arijit singh" 
 
 
 },
@@ -103,424 +103,136 @@ export const album = [
     name:"Top 10 Tamil",
     image:img10,
     backgroundcolor:"#rgb(119, 188, 192)",
-    duration:2.58
-    ,artist:"AnirudhRavichandran , Yogi"
+    artist:"AnirudhRavichandran , Yogi"
     
 
 },{
     id:3,
     name:"Top 10 Telugu",
     image:img12,
-    backgroundcolor:"#rgb(65, 89, 174)",
-    duration:3.25,
+    backgroundcolor:"#rgb(65, 89, 174)"
    },
    {
     id:4,
     name:"Top 10 Malayalam",
     image:img13,
     backgroundcolor:"#rgb(65, 89, 174)",
-    duration:3.25,
    },
    
    {
     id:5,
     name:"Top 10 hindi",
     image:img7,
-    backgroundcolor:"#rgb(65, 89, 174)",
-    duration:3.25,
+    backgroundcolor:"#rgb(65, 89, 174)"
    }
-]
-
-
-export const mfu=[
-    {
-        id:0,
-        name:"Baila Conmigo",
-        image:img6,
-        albumId:"0",
-        file:song1,
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06
-        ,artist:"Selena Gomez" 
-
-    },
-    {
-        id:1,
-        name:"Your Power",
-        image:img6,
-        albumId:"0",
-        file:song2,
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06
-        ,artist:"Billie Eilish" 
-
-    },
-    {
-        id:2,
-        name:"Electric",
-        image:img6,
-        albumId:"0",
-        file:song3,
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06
-        ,artist:"Katy Perry" 
-
-    },
-    {
-        id:3,
-        name:"Nobody",
-        image:img6,
-        albumId:"0",
-        file:song4,
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06
-        ,artist:"Zayn Malik" 
-
-    },
-    {
-        id:4,
-        name:"Play Date",
-        image:img6,
-        albumId:"0",
-        file:song5,
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06
-        ,artist:"Lilly Brooks" 
-
-    },
-    {
-        id:5,
-        name:"Enna solla",
-        image:mfu4,
-        file:mfu1mp3,
-        albumId:"2",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:6,
-        name:"april maadhathil",
-        image:mfu6,
-        file:mfu2mp3,
-        albumId:"2",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:7,
-        name:"Vennilave",
-        image:mfu2,
-        albumId:"2",
-        file:mfu3mp3,
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:8,
-        name:"Ennai Thaalata",
-        image:mfu5,
-        file:mfu4mp3,
-        albumId:"2",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:9,
-        name:"Annal mele",
-        image:mfu1,
-        file:mfu5mp3,
-        albumId:"2",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:10,
-        name:"vaarayo vaarayo",
-        image:mfu3,
-        file:mfu6mp3,
-        albumId:"2",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 ,
-        artist:"Harris Jayaraj"
-
-    },
-    {
-        id:11,
-        name:"song1",
-        image:img2,
-        file:hindi1,
-        albumId:"1",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:12,
-        name:"song2",
-        image:img2,
-        file:hindi2,
-        albumId:"1",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:13,
-        name:"song3",
-        image:img2,
-        file:hindi3,
-        albumId:"1",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:14,
-        name:"song4",
-        image:img2,
-        file:hindi4,
-        albumId:"1",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:15,
-        name:"song5",
-        image:img2,
-        file:hindi5,
-        albumId:"1",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:16,
-        name:"song1",
-        image:img5,
-        file:telugu1,
-        albumId:"3",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:17,
-        name:"song2",
-        image:img5,
-        file:telugu2,
-        albumId:"3",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:18,
-        name:"song3",
-        image:img5,
-        file:telugu3,
-        albumId:"3",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:19,
-        name:"song4",
-        image:img5,
-        file:telugu4,
-        albumId:"3",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:20,
-        name:"song5",
-        image:img5,
-        file:telugu5,
-        albumId:"3",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:21,
-        name:"song1",
-        image:img5,
-        file:mal1,
-        albumId:"4",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:22,
-        name:"song2",
-        image:img5,
-        file:mal2,
-        albumId:"4",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:22,
-        name:"song3",
-        image:img5,
-        file:mal3,
-        albumId:"4",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:23,
-        name:"song4",
-        image:img5,
-        file:mal4,
-        albumId:"4",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    },
-    {
-        id:24,
-        name:"song5",
-        image:img5,
-        file:mal5,
-        albumId:"4",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
-    }
-
 ]
 export const disalb1=[
     {
         id:0,
-        name:"Baila Conmigo",
+        name:"song1",
         image:img6,
         albumId:"0",
         file:song1,
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06
-        ,artist:"Selena Gomez" 
+        artist:"artist1" 
 
     },
     {
         id:1,
-        name:"Your Power",
+        name:"song2",
         image:img6,
         albumId:"0",
         file:song2,
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06
-        ,artist:"Billie Eilish" 
+        artist:"artist2" 
 
     },
     {
         id:2,
-        name:"Electric",
+        name:"song3",
         image:img6,
         albumId:"0",
         file:song3,
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06
-        ,artist:"Katy Perry" 
+        artist:"artist3" 
 
     },
     {
         id:3,
-        name:"Nobody",
+        name:"song4",
         image:img6,
         albumId:"0",
         file:song4,
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06
-        ,artist:"Zayn Malik" 
+       artist:"artist4" 
 
     },
     {
         id:4,
-        name:"Play Date",
+        name:"song5",
         image:img6,
         albumId:"0",
         file:song5,
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06
-        ,artist:"Lilly Brooks" 
+        artist:"artist5" 
 
     },
     {
         id:5,
-        name:"Enna solla",
-        image:mfu4,
+        name:"song1",
+        image:img14,
         file:mfu1mp3,
         albumId:"2",
-        artist:"Shankar Mahadevan",
-        backgroundcolor:"#rgb(106, 137, 184)",
-        duration:3.06 
-
+        artist:"artist1",
     },
     {
         id:6,
-        name:"april maadhathil",
-        image:mfu6,
+        name:"song2",
+        image:img14,
         file:mfu2mp3,
         albumId:"2",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 ,
-        artist:"Unnikrishnan"
+        artist:"artist2"
 
     },
     {
         id:7,
-        name:"Vennilave",
-        image:mfu2,
+        name:"song3",
+        image:img14,
         albumId:"2",
         file:mfu3mp3,
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 ,
-        artist:"Hariharan"
+        artist:"artist3"
 
     },
     {
         id:8,
-        name:"Ennai Thaalata",
-        image:mfu5,
+        name:"song4",
+        image:img14,
         file:mfu4mp3,
         albumId:"2",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 ,
-        artist:"Hariharan"
+        artist:"artist4"
 
     },
     {
         id:9,
-        name:"Annal mele",
-        image:mfu1,
+        name:"song5",
+        image:img14,
         file:mfu5mp3,
         albumId:"2",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 ,
-         artist:"SudhaRagunathan"
+         artist:"artist5"
 
     },
     {
         id:10,
-        name:"vaarayo vaarayo",
-        image:mfu3,
+        name:"song6",
+        image:img14,
         file:mfu6mp3,
         albumId:"2",
         backgroundcolor:"#rgb(106, 137, 184)",
         duration:3.06 ,
-        artist:"Harris Jayaraj"
+        artist:"artist6"
 
     },
     {
@@ -636,7 +348,7 @@ export const disalb1=[
     {
         id:21,
         name:"song1",
-        image:img5,
+        image:img9,
         file:mal1,
         albumId:"4",
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -647,7 +359,7 @@ export const disalb1=[
     {
         id:22,
         name:"song2",
-        image:img5,
+        image:img9,
         file:mal2,
         albumId:"4",
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -656,9 +368,9 @@ export const disalb1=[
 
     },
     {
-        id:22,
+        id:23,
         name:"song3",
-        image:img5,
+        image:img9,
         file:mal3,
         albumId:"4",
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -667,9 +379,9 @@ export const disalb1=[
 
     },
     {
-        id:23,
+        id:24,
         name:"song4",
-        image:img5,
+        image:img9,
         file:mal4,
         albumId:"4",
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -678,9 +390,9 @@ export const disalb1=[
 
     },
     {
-        id:24,
+        id:25,
         name:"song5",
-        image:img5,
+        image:img9,
         file:mal5,
         albumId:"4",
         backgroundcolor:"#rgb(106, 137, 184)",
@@ -688,6 +400,59 @@ export const disalb1=[
         artist:"artist5"
 
     }
+    , {
+        id:26,
+        name:"song1",
+        image:img2,
+        file:hindi1,
+        artist:"artist1",
+        albumId:"5",
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06 
+
+    },
+    {
+        id:27,
+        name:"song2",
+        image:img2,
+        file:hindi2,
+        artist:"artist2",
+        albumId:"5",
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06 
+
+    },
+    {
+        id:28,
+        name:"song3",
+        image:img2,
+        artist:"artist3",
+        file:hindi3,
+        albumId:"5",
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06 
+
+    },
+    {
+        id:29,
+        name:"song4",
+        image:img2,
+        artist:"artist4",
+        file:hindi4,
+        albumId:"5",
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06 
+
+    },
+    {
+        id:30,
+        name:"song5",
+        artist:"artist5",
+        image:img2,
+        file:hindi5,
+        albumId:"5",
+        backgroundcolor:"#rgb(106, 137, 184)",
+        duration:3.06 }
     
 
 ]

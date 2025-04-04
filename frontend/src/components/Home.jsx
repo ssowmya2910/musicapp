@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { album ,mfu, disparr} from '../assets/assets'
+import { album , disparr} from '../assets/assets'
 import Album from './Album'
 import Songs from './Songs'
 import './style/Home.css'

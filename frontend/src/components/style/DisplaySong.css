@@ -1,70 +1,114 @@
-
-.div1{
-    width:100%;
-    display: flex;
-    place-items: center;
+.div1 {
     position: fixed;
-    bottom:0;
-    left:0;
-    z-index:1000;
-    background-color: rgb(220, 187, 237);
-    margin-bottom: 0px;
-}
-.div1 img{
-    height:50px;
-    border-radius: 10%;
-    margin-top: 3px;
-
-}
-.play{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #181818; /* Dark background */
+    color: white;
+    padding: 10px 15px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
     display: flex;
-    
-}
-.pause{
-    display: flex;
-    
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
 }
 
-.col{
+.play {
     display: flex;
-    place-items: center;
-    margin-right: 30px;
-
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 600px;
 }
-.col img{
-    width:20px;
-    height:20px;
-    margin: 0px 5px 0px 0px;
-    border-radius: 50%;
+
+.img1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.dissong {
+    flex-grow: 1;
+    padding-left: 10px;
+}
+
+.dissong p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.col img {
+    width: 24px;
+    height: 24px;
     cursor: pointer;
+    transition: transform 0.2s ease-in-out;
 }
-/* .dissong{
-    margin-top: 3px;
-    margin-right: 20px;
-    padding-right:25vw ;
-    
-} */
 
-.playsong{
-    display: flex;
-    place-items: center;
-    gap:30px ;
-    margin-left: 30px;
-   
+.col img:hover {
+    transform: scale(1.1);
 }
-.img1{
-  margin:10px;
+
+.playsong {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.so1 {
+    width: 100px;
+    height: 5px;
+    background: #7e15c5;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.playline {
+    height: 5px;
+    width: 0%;
+    background: #bd68ca; 
+    border-radius: 5px;
+    position: absolute;
 }
 .so1{
-    width:60vw;
-    max-width: 500px;
-    cursor:pointer;
-    gap:30px;
-    border-radius: 50%;
-    background-color: rgb(175, 152, 196);
+    color: #2f0436;
 }
-.playline{
-    height: 1px;
-    width:25vw;
-    border-radius: 50%;
+
+@media (max-width: 600px) {
+    .play {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .time{
+        padding-right: 30px;
+    }
+    .col{
+        padding-left:30px;
+    }
+
+    .dissong {
+        padding-left: 0; 
+    }
+
+    .playsong {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .so1 {
+        width: 80%;
+    }
 }

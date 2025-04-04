@@ -1,36 +1,209 @@
+.div1{
+    width:100%;
+    display: flex;
+    place-items: center;
+    position: fixed;
+    bottom:0;
+    z-index:1000;
+    background-color: rgb(220, 187, 237);
+    margin-bottom: 0px;
+    padding: 15px;
+}
+
+.div1 img{
+    height:50px;
+    border-radius: 10%;
+    margin-top: 3px;
+}
+
+.play, .pause {
+    display: flex;
+}
+
+.col{
+    display: flex;
+    place-items: center;
+    margin-right: 30px;
+}
+
+.col img{
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.playsong{
+    display: flex;
+    place-items: center;
+    gap:30px;
+    margin-left: 30px;
+}
+
+.img1{
+    margin:10px;
+}
+
+.so1{
+    width:60vw;
+    max-width: 500px;
+    cursor:pointer;
+    gap:30px;
+    border-radius: 50%;
+    background-color: rgb(175, 152, 196);
+}
+
+.playline{
+    height: 1px;
+    width:25vw;
+    border-radius: 50%;
+}
+
+.disp{
+    height:150px;
+    width: 150px;
+}
+
+.disdiv1{
+    place-items: center;
+    padding: 20px;
+}
+
+.albumname{
+    color: darkorchid;
+    font-size: large;
+    font-weight: bold;
+}
+
+.disalb1{
+    gap:20px;
+    padding: 20px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.disalb1:hover{
+    background-color: lavender;
+    cursor: pointer;
+}
+
+.albumSongs{
+    margin-right:200px;
+    width: 100%;
+}
+
+.artistname p{
+    padding: 10px;
+}
+
+.songplay{
+    padding: 10px;
+}
+
+.songimg{
+    display: inline;
+    width: 70px;
+    margin-right: 50px;
+}
+
+.header p{
+    display:inline;
+    margin-right:200px;
+    margin-left:200px;
+    width:100%;
+    margin-top:50px;
+}
+
 .navv{
-    width:full;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    place-items: center;
-    font:bold;
+    align-items: center;
+    font-weight: bold;
 }
+
 .navv2{
     display: flex;
-    place-items: center;
-    cursor:pointer;
-   
+    align-items: center;
+    cursor: pointer;
 }
-.navbar:hover{
-    border:solid 3px rgb(160, 83, 232); 
 
+.navbar:hover{
+    border: solid 3px rgb(160, 83, 232);
 }
+
 .navbar{
-   margin:10px;
+    margin: 10px;
 }
+
 .navv2 img{
     border-radius: 50%;
-    width:30px;
-    
+    width: 30px;
 }
-.signup button{
-     padding:10px;
-     background-color: rgb(90, 55, 159);
-     color:white;
-     border-radius:500px;
-     cursor: pointer;
+
+
+
+@media screen and (max-width: 768px) {
+    .div1 {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .col {
+        margin-right: 15px;
+    }
+    .playsong {
+        gap: 15px;
+        margin-left: 15px;
+    }
+    .so1 {
+        width: 80vw;
+    }
+    .playline {
+        width: 50vw;
+    }
+    .albumSongs {
+        margin-right: 50px;
+    }
+    .header p {
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+    .navv {
+        flex-direction: column;
+        align-items: center;
+    }
 }
-.signup button:hover{
-    background-color: rgb(226, 144, 226);
-    color:rgb(90, 55, 159);
+
+@media screen and (max-width: 480px) {
+    .div1 {
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px 0;
+    }
+    .col {
+        margin-right: 10px;
+    }
+    .playsong {
+        gap: 10px;
+        margin-left: 10px;
+    }
+    .so1 {
+        width: 90vw;
+    }
+    .playline {
+        width: 60vw;
+    }
+    .albumSongs {
+        margin-right: 20px;
+    }
+    .header p {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .navv {
+        flex-direction: column;
+        align-items: center;
+    }
+   
 }
