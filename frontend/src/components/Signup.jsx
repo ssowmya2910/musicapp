@@ -14,13 +14,13 @@ const Signup = ({ setIsAuthenticated }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post("https://isaiwreathe.onrender.com/signup", {
+      const response = await axios.post("https://isaiwreathe.onrender.com/api/auth/signup", {
         email,
         password,
       });
       setIsAuthenticated(true); // make sure to pass this prop when using <Signup />
       navigate("/home");
-    } catch {
+    } catch(e) {
       alert("Signup failed. Try again.");
     } finally {
       setLoading(false);

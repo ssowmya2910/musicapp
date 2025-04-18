@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './style/Login.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { ClipLoader } from 'react-spinners'; // Make sure to install this package
+import { ClipLoader } from 'react-spinners';
 
 const Login = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
@@ -15,13 +15,13 @@ const Login = ({ setIsAuthenticated }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post("https://isaiwreathe.onrender.com/login", {
+      const response = await axios.post("https://isaiwreathe.onrender.com/api/auth/login", {
         email,
         password,
       });
       setIsAuthenticated(true);
       navigate("/home");
-    } catch {
+    } catch(e) {
       alert("Invalid credentials");
     } finally {
       setLoading(false);
