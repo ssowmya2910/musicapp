@@ -1,48 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import Navbar from './Navbar.jsx';
-import { album } from '../assets/assets';
+import axios from 'axios';
+import Navbar from './Navbar';
+import DisplaySong from './DisplaySong';
+import { PlayerContext } from '../context/PlayerContext';
 import './style/Display.css';
-import {disalb1} from '../assets/assets'
-import { useContext } from 'react';
-import { PlayerContext } from '../context/PlayerContext.jsx';
-import DisplaySong from './DisplaySong.jsx';
-import Sidebar from './Sidebar.jsx';
-const DisAlb = () => {
-  const { id } = useParams();
-  const { playWithId } = useContext(PlayerContext);  
 
-  const albumData = album[id]; 
-  const albumSongs = disalb1.filter(song => song.albumId === id); 
+const DisAlb = () => {
+  const { id } = useParams(); // album ID
+  const { playWithId } = useContext(PlayerContext);
+
+  const [albumData, setAlbumData] = useState({});
+  const [songs, setSongs] = useState([]);
+  useEffect(() => {
+    const fetchAlbumAndSongs = async () => {
+      try {
+        const albumRes = await axios.get("https://isaiwreathe.onrender.com/api/songs/albums");
+        const album = albumRes.data.find(a => a._id === id);
+        setAlbumData(album);
+  
+        const songsRes = await axios.get(`https://isaiwreathe.onrender.com/api/songs/album/${id}/songs`);
+        setSongs(songsRes.data);
+      } catch (err) {
+        console.error("Error loading album or songs", err);
+      }
+    };
+  
+    fetchAlbumAndSongs();
+  }, [id]);
+  
+
   return (
     <div>
       <Navbar />
-      {/* <Sidebar/> */}
-      <DisplaySong/>
-      <div className='disdiv1' style={{backgroundColor:albumData.backgroundcolor}}>
+      <DisplaySong />
+
+      <div className='disdiv1' style={{ backgroundColor: albumData.backgroundColor || '#333' }}>
         <img className='disp' src={albumData.image} alt="Album Cover" />
         <h2 className='albumname'>{albumData.name}</h2>
       </div>
-      
+
       <div className='header'>
-        <p><b className='tit'>#</b>Title</p>
+        <p><b className='tit'>#</b> Title</p>
         <p>Artist</p>
         <p>Album</p>
       </div>
-      
-      <hr/>
+
+      <hr />
       <div className='albumSongs'>
-        {albumSongs.map((item, index) => (
-          <div className='disalb1' key={item.id} onClick={() => playWithId(item.id, false)}> 
+        {songs.map((song, index) => (
+          <div className='disalb1' key={song._id} onClick={() => playWithId(song._id, false)}>
             <p className='songplay'>
               <b>{index + 1}</b>
-              <img className='songimg' src={item.image} alt=""/>
-              {item.name}
-   
+              <img className='songimg' src={song.image} alt=""/>
+              {song.name}
             </p>
-           <p className='artistname'>{item.artist}</p>
+            <p className='artistname'>{song.artist}</p>
             <p>{albumData.name}</p>
-
           </div>
         ))}
       </div>
