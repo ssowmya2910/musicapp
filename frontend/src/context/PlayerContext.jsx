@@ -1,4 +1,6 @@
-import { createContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
+import axios from "axios";
+import { UserContext } from "./UserContext";
 
 export const PlayerContext = createContext();
 
@@ -6,11 +8,15 @@ const PlayerContextProv = (props) => {
   const audioRef = useRef();
   const seek = useRef();
   const seekBar = useRef();
+  const { userId } = useContext(UserContext);
 
-  const [allSongs, setAllSongs] = useState([]); // fetched from MongoDB
+  const [allSongs, setAllSongs] = useState([]);
   const [trackIndex, setTrackIndex] = useState(null);
   const [track, setTrack] = useState({});
   const [playStatus, setPlayStatus] = useState(false);
+
+  const [likedSongs, setLikedSongs] = useState([]);
+  const [recentlyPlayed, setRecentlyPlayed] = useState([]);
 
   const [time, setTime] = useState({
     currentTime: { second: 0, minute: 0 },
@@ -31,24 +37,20 @@ const PlayerContextProv = (props) => {
     try {
       const res = await fetch(`https://isaiwreathe.onrender.com/api/songs/${id}`);
       const newTrack = await res.json();
-  
+      const index = allSongs.findIndex(song => song._id === id);
+
       setTrack(newTrack);
-      const index = allSongs.findIndex(song => song._id === newTrack._id);
       setTrackIndex(index);
-  
-      if (audioRef.current) {
-        audioRef.current.src = newTrack.file;
-        audioRef.current.onloadeddata = async () => {
-          try {
-            await audioRef.current.play();
-            setPlayStatus(true);
-          } catch (err) {
-            console.error("Playback failed:", err);
-          }
-        };
-      }
+      audioRef.current.src = newTrack.file;
+      audioRef.current.play();
+      setPlayStatus(true);
+
+      await axios.post(`https://isaiwreathe.onrender.com/api/auth/play/${id}`, { userId });
+      
+
+      fetchRecentlyPlayed();
     } catch (err) {
-      console.error("Error playing song:", err);
+      console.error("Play failed", err);
     }
   };
 
@@ -73,16 +75,46 @@ const PlayerContextProv = (props) => {
       (e.nativeEvent.offsetX / seek.current.offsetWidth) * audioRef.current.duration;
   };
 
+  const toggleLikeSong = async (songId) => {
+    try {
+      await axios.post(`https://isaiwreathe.onrender.com/api/auth/like/${songId}`, { userId });
+      fetchLikedSongs();
+    } catch (error) {
+      console.error("Error liking song", error);
+    }
+  };
+
+  const fetchLikedSongs = async () => {
+    try {
+      const res = await axios.get(`https://isaiwreathe.onrender.com/api/auth/liked/${userId}`);
+      setLikedSongs(res.data);
+    } catch (error) {
+      console.error("Failed to fetch liked songs", error);
+    }
+  };
+
+  const fetchRecentlyPlayed = async () => {
+    try {
+      const res = await axios.get(`https://isaiwreathe.onrender.com/api/auth/recently-played/${userId}`);
+      setRecentlyPlayed(res.data);
+    } catch (error) {
+      console.error("Failed to fetch recently played", error);
+    }
+  };
+
   useEffect(() => {
     const fetchAllSongs = async () => {
       const res = await fetch("https://isaiwreathe.onrender.com/api/songs");
       const data = await res.json();
       setAllSongs(data);
     };
-  
+
     fetchAllSongs();
-  }, []);
-  
+    if (userId) {
+      fetchLikedSongs();
+      fetchRecentlyPlayed();
+    }
+  }, [userId]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -128,6 +160,9 @@ const PlayerContextProv = (props) => {
     setAllSongs,
     trackIndex,
     setTrackIndex,
+    toggleLikeSong,
+    likedSongs,
+    recentlyPlayed,
   };
 
   return (

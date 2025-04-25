@@ -5,10 +5,10 @@ import Navbar from './Navbar';
 import DisplaySong from './DisplaySong';
 import { PlayerContext } from '../context/PlayerContext';
 import './style/Display.css';
-
+import { assets } from '../assets/assets';
 const DisAlb = () => {
   const { id } = useParams(); // album ID
-  const { playWithId } = useContext(PlayerContext);
+  const { playWithId,likedSongs, toggleLikeSong } = useContext(PlayerContext);
 
   const [albumData, setAlbumData] = useState({});
   const [songs, setSongs] = useState([]);
@@ -39,6 +39,7 @@ const DisAlb = () => {
         <img className='disp' src={albumData.image} alt="Album Cover" />
         <h2 className='albumname'>{albumData.name}</h2>
       </div>
+      
 
       <div className='header'>
         <p><b className='tit'>#</b> Title</p>
@@ -55,6 +56,13 @@ const DisAlb = () => {
               <img className='songimg' src={song.image} alt=""/>
               {song.name}
             </p>
+            <div
+      className="likeIcon"
+      onClick={() => toggleLikeSong(song._id)}
+      style={{ cursor: "pointer" }}
+    >
+      {likedSongs.some(s => s._id === song._id) ?  "💜":"🤍" }
+    </div>
             <p className='artistname'>{song.artist}</p>
             <p>{albumData.name}</p>
           </div>

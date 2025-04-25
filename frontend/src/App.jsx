@@ -7,6 +7,8 @@ import Sidebar from './components/Sidebar';
 import Home from './components/Home';
 import DisAlb from './components/DisAlb';
 import { PlayerContext } from './context/PlayerContext';
+import LikedSongs from './components/LikedSongs';
+import RecentlyPlayed from './components/RecentlyPlayed';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -22,7 +24,8 @@ const App = () => {
           <Route path='/signup' element={<Signup setIsAuthenticated={setIsAuthenticated} />} />
           <Route path='/disalb/:id' element={<DisAlb/>}/>
           <Route path='/home' element={<Home/>}/>
-           
+          <Route path="/liked" element={<LikedSongs />} />
+          <Route path="/recently-played" element={<RecentlyPlayed />} />
         </Routes>
       </BrowserRouter>
     </div>

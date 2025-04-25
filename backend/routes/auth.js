@@ -31,5 +31,44 @@ router.post('/login', async (req, res) => {
   const token = jwt.sign({ id: user._id }, SECRET_KEY, { expiresIn: "1h" });
   res.json({ success: true, token });
 });
+router.post('/like/:songId', async (req, res) => {
+  const { userId } = req.body; // or from auth token
+  const { songId } = req.params;
+
+  try {
+    const user = await User.findById(userId);
+    if (!user.likedSongs.includes(songId)) {
+      user.likedSongs.push(songId);
+      await user.save();
+    }
+    res.json({ message: 'Song liked' });
+  } catch (err) {
+    res.status(500).json({ error: 'Something went wrong' });
+  }
+});
+router.get('/liked/:userId', async (req, res) => {
+  const user = await User.findById(req.params.userId).populate('likedSongs');
+  res.json(user.likedSongs);
+});
+router.post('/play/:songId', async (req, res) => {
+  const { userId } = req.body;
+  const { songId } = req.params;
+
+  try {
+    const user = await User.findById(userId);
+    user.recentlyPlayed = [songId, ...user.recentlyPlayed.filter(id => id != songId)];
+    user.recentlyPlayed = user.recentlyPlayed.slice(0, 10); // limit to 10
+    await user.save();
+
+    res.json({ message: 'Play updated' });
+  } catch (err) {
+    res.status(500).json({ error: 'Error updating recently played' });
+  }
+});
+router.get('/recently-played/:userId', async (req, res) => {
+  const user = await User.findById(req.params.userId).populate('recentlyPlayed');
+  res.json(user.recentlyPlayed);
+});
+
 
 module.exports = router;

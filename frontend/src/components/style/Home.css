@@ -3,6 +3,7 @@
 
 .album-list {
     margin: 50px;
+    margin-left: 50vh;
     padding: 20px;
     font-weight: bold;
     display: flex;
@@ -12,15 +13,6 @@
     padding-bottom: 50px; 
 }
 
-
-.home h2 {
-    color: rgb(247, 31, 236);
-    font-size: large;
-    margin-bottom: 15px;
-    text-align:center;
-    font-weight: 400;
-    
-}
 
 
 .aldis {
@@ -56,7 +48,7 @@
         font-size: 14px;
     }
 
-    .homesongs {
+    .album-list {
         margin-left: 200px; 
     }
 }
@@ -73,8 +65,8 @@
         padding: 10px;
     }
 
-    .homesongs {
-        margin-left: 0; 
+    .album-list {
+        margin-left: 100px;
         padding: 10px;
         min-height: 100vh;
     padding-bottom: 100px;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Album from './Album';
 import './style/Home.css'; 
+import Sidebar from './Sidebar';
 const Home = () => {
   const [albums, setAlbums] = useState([]);
 
@@ -19,8 +20,10 @@ const Home = () => {
   }, []);
 
   return (
+    <>
+    <Sidebar/>
     <div className="home">
-      <h2>Albums</h2>
+     
       <div className="album-list">
         {albums.map(album => (
           <Album 
@@ -32,6 +35,7 @@ const Home = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

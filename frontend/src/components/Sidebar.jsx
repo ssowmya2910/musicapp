@@ -13,22 +13,22 @@ const Sidebar = () => {
       <img src={assets.home} alt="home"/>
        home
         </div></Link>
-        <div className='inside'>
-        <img src={assets.search} alt="search"/>
-        <p>search</p> 
+       <Link to='/liked'><div className='inside'>
+        <img src={assets.fav} alt="like"/>
+        <p>liked songs</p> 
           
-        </div>
+        </div></Link> 
         
       </div>
       <div className='sideBar2'>
-        <div>
+        <Link to='/recently-played'>
         <div className='inside'>
             <img src={assets.stack}/>
-            <p>your library</p>
+            <p>recently played</p>
           </div>
+          </Link>
 
-         
-        </div>
+       
       </div>
 
     </div>

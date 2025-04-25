@@ -13,6 +13,7 @@ import play from './play.png'
 import pause from './pause.png'
 import mic from './mic.png'
 import like from './like.png'
+import fav from './fav.png'
 import add from './add.png'
 import img2 from './img2.jpg'
 import img3 from './img3.jpg'
@@ -73,6 +74,7 @@ export const assets = {
     img14,
     speaker,
     clock,
+    fav,
     like,
     mic,
     stack,
