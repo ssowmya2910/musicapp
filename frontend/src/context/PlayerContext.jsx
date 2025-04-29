@@ -24,9 +24,12 @@ const PlayerContextProv = (props) => {
   });
 
   const play = () => {
-    audioRef.current.play();
-    setPlayStatus(true);
+    if (audioRef.current && audioRef.current.readyState >= 2) {
+      audioRef.current.play();
+      setPlayStatus(true);
+    }
   };
+  
 
   const pause = () => {
     audioRef.current.pause();
@@ -38,21 +41,28 @@ const PlayerContextProv = (props) => {
       const res = await fetch(`https://isaiwreathe.onrender.com/api/songs/${id}`);
       const newTrack = await res.json();
       const index = allSongs.findIndex(song => song._id === id);
-
-      setTrack(newTrack);
+  
       setTrackIndex(index);
-      audioRef.current.src = newTrack.file;
-      audioRef.current.play();
-      setPlayStatus(true);
-
-      await axios.post(`https://isaiwreathe.onrender.com/api/auth/play/${id}`, { userId });
-      
-
+      setTrack(newTrack); // let useEffect handle loading and playing
+  
+      await axios.post(`https://isaiwreathe.onrender.com/api/user/play/${id}`, { userId });
       fetchRecentlyPlayed();
     } catch (err) {
       console.error("Play failed", err);
     }
   };
+  useEffect(() => {
+    if (track && track.file && audioRef.current) {
+      audioRef.current.src = track.file;
+      audioRef.current.load(); // ensure browser reloads audio
+      audioRef.current.play().then(() => {
+        setPlayStatus(true);
+      }).catch((err) => {
+        console.log("Autoplay failed", err);
+      });
+    }
+  }, [track]);
+    
 
   const prev = () => {
     if (trackIndex > 0) {
@@ -77,7 +87,7 @@ const PlayerContextProv = (props) => {
 
   const toggleLikeSong = async (songId) => {
     try {
-      await axios.post(`https://isaiwreathe.onrender.com/api/auth/like/${songId}`, { userId });
+      await axios.post(`https://isaiwreathe.onrender.com/api/user/like/${songId}`, { userId });
       fetchLikedSongs();
     } catch (error) {
       console.error("Error liking song", error);
@@ -86,7 +96,7 @@ const PlayerContextProv = (props) => {
 
   const fetchLikedSongs = async () => {
     try {
-      const res = await axios.get(`https://isaiwreathe.onrender.com/api/auth/liked/${userId}`);
+      const res = await axios.get(`https://isaiwreathe.onrender.com/api/user/liked/${userId}`);
       setLikedSongs(res.data);
     } catch (error) {
       console.error("Failed to fetch liked songs", error);
@@ -95,12 +105,13 @@ const PlayerContextProv = (props) => {
 
   const fetchRecentlyPlayed = async () => {
     try {
-      const res = await axios.get(`https://isaiwreathe.onrender.com/api/auth/recently-played/${userId}`);
+      const res = await axios.get(`https://isaiwreathe.onrender.com/api/user/recently-played/${userId}`);
       setRecentlyPlayed(res.data);
     } catch (error) {
       console.error("Failed to fetch recently played", error);
     }
   };
+  
 
   useEffect(() => {
     const fetchAllSongs = async () => {
@@ -120,9 +131,11 @@ const PlayerContextProv = (props) => {
     const interval = setInterval(() => {
       if (audioRef.current) {
         audioRef.current.ontimeupdate = () => {
-          seekBar.current.style.width =
-            Math.floor((audioRef.current.currentTime / audioRef.current.duration) * 100) + "%";
-
+          if (seekBar.current && audioRef.current.duration) {
+            seekBar.current.style.width =
+              Math.floor((audioRef.current.currentTime / audioRef.current.duration) * 100) + "%";
+          }
+          
           setTime({
             currentTime: {
               second: Math.floor(audioRef.current.currentTime % 60),

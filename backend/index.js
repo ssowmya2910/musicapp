@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGODB_URL)
   .catch((err) => console.log("Check your connection string", err));
 
 // Routes
-app.use('/api/auth', require('./routes/auth'));
+app.use('/api/user', require('./routes/auth'));
 app.use('/api/songs', require('./routes/songs'));
 
 

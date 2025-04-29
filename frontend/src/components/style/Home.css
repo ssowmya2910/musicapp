@@ -1,5 +1,10 @@
 @import "tailwindcss";
+* h2{
+    font-weight: 600;
+    color: rgb(215, 142, 215);
+    text-align: center;
 
+}
 
 .album-list {
     margin: 50px;
