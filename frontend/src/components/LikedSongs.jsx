@@ -11,7 +11,7 @@ const LikedSongs = () => {
   useEffect(() => {
     const fetchLiked = async () => {
       try {
-        const res = await axios.get(`https://isaiwreathe.onrender.com/api/auth/liked/${userId}`);
+        const res = await axios.get(`https://isaiwreathe.onrender.com/api/user/liked/${userId}`);
         setSongs(res.data);
       } catch (err) {
         console.error("Error fetching liked songs", err);

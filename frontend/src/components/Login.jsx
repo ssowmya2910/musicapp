@@ -15,7 +15,7 @@ const Login = ({ setIsAuthenticated }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post("https://isaiwreathe.onrender.com/api/auth/login", {
+      const response = await axios.post("https://isaiwreathe.onrender.com/api/user/login", {
         email,
         password,
       });

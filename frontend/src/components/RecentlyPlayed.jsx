@@ -11,7 +11,7 @@ const RecentlyPlayed = () => {
   useEffect(() => {
     const fetchRecent = async () => {
       try {
-        const res = await axios.get(`https://isaiwreathe.onrender.com/api/auth/recently-played/${userId}`);
+        const res = await axios.get(`https://isaiwreathe.onrender.com/api/user/recently-played/${userId}`);
         setSongs(res.data);
       } catch (err) {
         console.error("Error fetching recently played", err);
