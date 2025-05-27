@@ -6,7 +6,10 @@ const cors = require('cors');
 const app = express();
 dotenv.config();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://isaiwreathe.netlify.app", 
+  credentials: true 
+}));
 const Song = require('./models/Song');
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URL)

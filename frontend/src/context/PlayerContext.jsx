@@ -8,7 +8,9 @@ const PlayerContextProv = (props) => {
   const audioRef = useRef();
   const seek = useRef();
   const seekBar = useRef();
-  const { userId } = useContext(UserContext);
+ const { userId: contextUserId } = useContext(UserContext);
+const storedUserId = localStorage.getItem("userId");
+const userId = contextUserId || storedUserId;
 
   const [allSongs, setAllSongs] = useState([]);
   const [trackIndex, setTrackIndex] = useState(null);

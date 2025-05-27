@@ -4,7 +4,7 @@ import './style/Login.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { ClipLoader } from 'react-spinners';
-
+import {jwtDecode} from "jwt-decode";
 const Login = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
   const [password, setPass] = useState("");
@@ -19,6 +19,9 @@ const Login = ({ setIsAuthenticated }) => {
         email,
         password,
       });
+      const token = response.data.token;
+      const decoded = jwtDecode(token);
+      localStorage.setItem("userId", decoded.id);
       setIsAuthenticated(true);
       navigate("/home");
     } catch(e) {
