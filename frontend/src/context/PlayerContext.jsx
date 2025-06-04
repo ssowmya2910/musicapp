@@ -8,23 +8,13 @@ const PlayerContextProv = (props) => {
   const audioRef = useRef();
   const seek = useRef();
   const seekBar = useRef();
-  const userId = localStorage.getItem("userId");
- useEffect(() => {
-  const storedUserId = localStorage.getItem("userId");
-  if (storedUserId) {
-    fetchLikedSongs(storedUserId);
-    fetchRecentlyPlayed(storedUserId);
-  }
-}, []);
-
+  const { userId, likedSongs, setLikedSongs, recentlyPlayed, setRecentlyPlayed } = useContext(UserContext);
+ 
 
   const [allSongs, setAllSongs] = useState([]);
   const [trackIndex, setTrackIndex] = useState(null);
   const [track, setTrack] = useState({});
   const [playStatus, setPlayStatus] = useState(false);
-
-  const [likedSongs, setLikedSongs] = useState([]);
-  const [recentlyPlayed, setRecentlyPlayed] = useState([]);
 
   const [time, setTime] = useState({
     currentTime: { second: 0, minute: 0 },
@@ -45,8 +35,17 @@ const PlayerContextProv = (props) => {
   };
 
   const playWithId = async (id) => {
+    if (!userId) return console.error("User ID missing");
     try {
-      const res = await fetch(`https://isaiwreathe.onrender.com/api/songs/${id}`);
+     const token = localStorage.getItem("token");
+await axios.post(
+  `https://isaiwreathe.onrender.com/api/songs/${id}`,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+);
       const newTrack = await res.json();
       const index = allSongs.findIndex(song => song._id === id);
   
@@ -54,7 +53,7 @@ const PlayerContextProv = (props) => {
       setTrack(newTrack); // let useEffect handle loading and playing
   
       await axios.post(`https://isaiwreathe.onrender.com/api/user/play/${id}`, { userId });
-      fetchRecentlyPlayed();
+      fetchRecentlyPlayed(userId);
     } catch (err) {
       console.error("Play failed", err);
     }
@@ -94,9 +93,19 @@ const PlayerContextProv = (props) => {
   };
 
   const toggleLikeSong = async (songId) => {
+    if (!userId) return console.error("User ID missing");
     try {
-      await axios.post(`https://isaiwreathe.onrender.com/api/user/like/${songId}`, { userId });
-      fetchLikedSongs();
+      const token = localStorage.getItem("token");
+await axios.post(
+  `https://isaiwreathe.onrender.com/api/user/like/${songId}`,
+  { userId },
+  {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+);
+      fetchLikedSongs(userId);
     } catch (error) {
       console.error("Error liking song", error);
     }
@@ -104,7 +113,15 @@ const PlayerContextProv = (props) => {
 
   const fetchLikedSongs = async (uId) => {
     try {
-      const res = await axios.get(`https://isaiwreathe.onrender.com/api/user/liked/${uId}`);
+      const token = localStorage.getItem("token");
+const res = await axios.get(
+  `https://isaiwreathe.onrender.com/api/user/liked/${uId}`,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+);
       setLikedSongs(res.data);
     } catch (error) {
       console.error("Failed to fetch liked songs", error);
@@ -113,7 +130,15 @@ const PlayerContextProv = (props) => {
 
   const fetchRecentlyPlayed = async (uId) => {
     try {
-      const res = await axios.get(`https://isaiwreathe.onrender.com/api/user/recently-played/${uId}`);
+     const token = localStorage.getItem("token");
+const res = await axios.get(
+  `https://isaiwreathe.onrender.com/api/user/recently-played/${uId}`,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+);
       setRecentlyPlayed(res.data);
     } catch (error) {
       console.error("Failed to fetch recently played", error);
@@ -130,8 +155,8 @@ const PlayerContextProv = (props) => {
 
     fetchAllSongs();
     if (userId) {
-      fetchLikedSongs();
-      fetchRecentlyPlayed();
+      fetchLikedSongs(userId);
+      fetchRecentlyPlayed(userId);
     }
   }, [userId]);
 

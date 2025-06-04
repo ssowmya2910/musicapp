@@ -6,10 +6,24 @@ const cors = require('cors');
 const app = express();
 dotenv.config();
 app.use(express.json());
+
+
+const allowedOrigins = [
+  "http://localhost:5173/",             
+  "https://isaiwreathe.vercel.app",   
+];
+
 app.use(cors({
-  origin: "https://isaiwreathe.netlify.app", 
-  credentials: true 
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
 }));
+
 const Song = require('./models/Song');
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URL)

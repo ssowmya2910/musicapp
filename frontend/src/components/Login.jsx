@@ -22,6 +22,7 @@ const Login = ({ setIsAuthenticated }) => {
       const token = response.data.token;
       const decoded = jwtDecode(token);
       localStorage.setItem("userId", decoded.id);
+      localStorage.setItem("token", token);
       setIsAuthenticated(true);
       navigate("/home");
     } catch(e) {
