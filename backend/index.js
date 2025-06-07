@@ -10,7 +10,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   "http://localhost:5173/",             
-  "https://isaiwreathe.netlify.app/",   
+  "https://isaiwreathe.netlify.app",   
 ];
 
 app.use(cors({
